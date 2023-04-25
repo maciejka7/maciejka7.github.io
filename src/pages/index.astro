@@ -15,6 +15,7 @@ import PortfolioPreview from "../components/PortfolioPreview.astro";
 // Page section components
 import ContactCTA from "../components/ContactCTA.astro";
 import Skills from "../components/Skills.astro";
+import { icon } from "../utils/externalcons";
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection("work"))
@@ -26,93 +27,34 @@ const projects = (await getCollection("work"))
 ---
 
 <BaseLayout>
-  <div class="stack gap-20 lg:gap-48">
-    <div class="wrapper stack gap-8 lg:gap-20">
-      <header class="hero">
-        <Hero
-          title="Hello, my name is Mike"
-          tagline="I am a Creative Developer who is currently based in Portland, Oregon."
-          align="start"
+  <header class="hero stack flex h-full content-center gap-20 lg:gap-48">
+    <Hero title="Hello, my name is Mike" align="start">
+      <p class="tagline" slot="tagline">
+        I'm FrontEnd Developer based in Częstochowa, Silesia, Poland. <br />
+        Presently I work for <span class="text-[#ff6200] p-0 m-0"
+          >ING Bank Śląski</span
         >
-          <div class="roles">
-            <Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-            <Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
-            <Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
-          </div>
-        </Hero>
+      </p>
+      <div class="roles">
+        <Pill>
+          <Icon externalIcon={icon.lit} size="1.33em" /> WebComponents
+        </Pill>
+        <Pill>
+          <Icon externalIcon={icon.vue} size="1.33em" /> Vue
+        </Pill>
+        <Pill>
+          <Icon externalIcon={icon.react} size="1.33em" /> React
+        </Pill>
+      </div>
+    </Hero>
 
-        <img
-          alt="Mike smiling in a red plaid shirt and tortoise shell glasses"
-          width="480"
-          height="620"
-          src="/assets/portrait.jpg"
-        />
-      </header>
-
-      <Skills />
-    </div>
-
-    <main class="wrapper stack gap-20 lg:gap-48">
-      <section class="section with-background with-cta">
-        <header class="section-header stack gap-2 lg:gap-4">
-          <h3>Selected Work</h3>
-          <p>
-            Take a look below at some of my featured work for clients from the
-            past few years.
-          </p>
-        </header>
-
-        <div class="gallery">
-          <Grid variant="offset">
-            {
-              projects.map((project) => (
-                <li>
-                  <PortfolioPreview project={project} />
-                </li>
-              ))
-            }
-          </Grid>
-        </div>
-
-        <div class="cta">
-          <CallToAction href="/work/">
-            View All
-            <Icon icon="arrow-right" size="1.2em" />
-          </CallToAction>
-        </div>
-      </section>
-
-      <section class="section with-background bg-variant">
-        <header class="section-header stack gap-2 lg:gap-4">
-          <h3>Mentions</h3>
-          <p>
-            I have been fortunate enough to recieve praise for my work in
-            several publications. Take a look below to learn more.
-          </p>
-        </header>
-
-        <div class="gallery">
-          <Grid variant="small">
-            {
-              [
-                "Medium",
-                "BuzzFeed",
-                "The Next Web",
-                "awwwards.",
-                "TechCrunch",
-              ].map((brand) => (
-                <li class="mention-card">
-                  <p>{brand}</p>
-                </li>
-              ))
-            }
-          </Grid>
-        </div>
-      </section>
-    </main>
-
-    <ContactCTA />
-  </div>
+    <img
+      alt="My Profile photo"
+      width="480"
+      height="620"
+      src="https://avatars.githubusercontent.com/u/18124391?v=4"
+    />
+  </header>
 </BaseLayout>
 
 <style>
