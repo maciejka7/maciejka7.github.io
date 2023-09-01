@@ -1,10 +1,11 @@
 import { defineConfig } from 'astro/config';
-
 import tailwind from "@astrojs/tailwind";
 import vue from '@astrojs/vue';
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), vue()],
-  site: 'https://maciejka7.github.io',
+  integrations: [tailwind(), vue(), mdx()],
+  site: 'https://maciejka7.github.io'
 });
