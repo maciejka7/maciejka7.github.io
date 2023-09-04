@@ -1,0 +1,39 @@
+--- 
+
+
+/** Main menu items */
+const textLinks: { label: string; href: string }[] = [
+  { label: "Home", href: "/" },
+  { label: "Work", href: "/work/" },
+  { label: "About", href: "/about/" },
+  // { label: "Blog", href: "/blog/" },
+];
+
+---
+
+<div id="menu-content">
+    <ul class="flex gap-5">
+      {
+        textLinks.map(({ label, href }) => (
+          <li>
+            <a
+              aria-current={Astro.url.pathname === href}
+              class:list={[
+                "hover:border-blue-300 hover:text-blue-300 transition-all",
+                "border-transparent border-b-2",
+                "px-2 py-2 ",
+                {
+                  active:
+                    Astro.url.pathname === href ||
+                    (href !== "/" && Astro.url.pathname.startsWith(href)),
+                },
+              ]}
+              href={href}
+            >
+              {label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+</div>

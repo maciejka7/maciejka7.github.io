@@ -1,0 +1,15 @@
+--- 
+import Icon from './Icon.astro';
+
+
+
+interface Props {
+	href: string,
+    label: string,
+}
+
+const { href, label } = Astro.props
+
+--- 
+
+<a class="flex gap-2 items-center" href={href}><Icon icon="arrow-left" /> {label[0].toUpperCase()}{label.slice(1, label.length)}</a>
