@@ -10,38 +10,7 @@ const { align = "center", tagline, title } = Astro.props;
 
 <header class:list={["hero stack gap-4 font-7xl", align]}>
   <div class="stack gap-2">
-    <h1 class="title flex max-w-xl">{title}</h1>
-    {tagline && <p class="tagline max-w-xl">{tagline}</p>}
+    <h1 class="text-4xl sm:text-7xl flex max-w-xl">{title}</h1>
+    {tagline && <p class="text-xl sm:text-2xl max-w-xl">{tagline}</p>}
   </div>
 </header>
-
-<style>
-  .title,
-  .tagline {
-    margin-inline: auto;
-  }
-
-  .title {
-    font-size: var(--text-3xl);
-    color: var(--gray-0);
-  }
-
-  @media (min-width: 50em) {
-    .hero {
-      font-size: var(--text-xl);
-    }
-
-    .start {
-      text-align: start;
-    }
-
-    .start .title,
-    .start .tagline {
-      margin-inline: unset;
-    }
-
-    .title {
-      font-size: var(--text-5xl);
-    }
-  }
-</style>
