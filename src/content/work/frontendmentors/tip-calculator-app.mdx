@@ -1,5 +1,4 @@
 ---
-
 title: Tip calculator app
 publishDate: 2020-03-02 00:00:00
 img: https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/so0b0hpmowz5ujjwbhkp.jpg
@@ -12,25 +11,56 @@ tags:
   - JS
 ---
 
-import Calc from '../../../components/frontendmentors/tip-calculator-app/Calc.vue'
+import Calc from "../../../components/frontendmentors/tip-calculator-app/Calc.vue";
 
+# Hello, take a look at this challenge!
 
-# Brief
+> That's not my first challenge taken, but I want to start here from that because it's simply enough to complete it in one take, and its seem to be fun :)
 
-> Your challenge is to build out this tip calculator app and get it looking as close to the design as possible.
+Check the button of the page when the solution are. It's `vue` component inside `astro` and it's mind blowing 🤯
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+# Challenge brief from Frontendmentors
 
-Your users should be able to:
+👉 [Frontendmentors page with this challenge](https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX)
 
-- Calculate the correct tip and total cost of the bill per person
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
+# My feeling about that
 
-Download the project and go through the README.md file. This will provide further details about the project and help you get set up.
+## I have to start with astro - it's amazing pice of software. Possibilites are great.
 
-Want some support on the challenge? Join our community and ask questions in the help channel.
+At the start I saw how everything is render on the server site - performance goes to the moon 🌙
+
+When I started working on this Vue component I realize its also server rendred - huuge! 🤯
+
+But it's one downsite - during development you want have access to `console.log` direct in your browser. By default when it's server rendered everything happend in your shell / server.
+To enable this you can you 👉 [one of the astro directive](https://docs.astro.build/en/reference/directives-reference/#clientonly) `client:only="vue"`. Of course use tech of your choice `client:only="react"` or whatever astro is capable of
+
+## Ok let’s talk about vue - it’s just amaze me
+
+look at this:
+
+```vue
+</script>
+const colors = {
+    veryDarkCyan: 'hsl(183, 100%, 15%)',
+}
+</script>
+
+<template>
+    <div>
+        <h1> Lorem Ipsum</h1>
+    </div>
+</template>
+
+<style>
+h1 {
+    color: v-bind('colors.veryDarkCyan')
+}
+
+```
+
+And its work's ! I don't know what vue version bring this but if I'm corret when I working with vue on enterprise app 6 years ago it wasn't avaibale
+zxxxxxxxxxxxxxxxxx
 
 # App:
 
-<Calc />
+<Calc client:only="vue" />
