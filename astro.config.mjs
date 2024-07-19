@@ -8,4 +8,5 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   integrations: [tailwind(), vue(), mdx()],
   site: 'https://maciejka7.github.io'
+
 });

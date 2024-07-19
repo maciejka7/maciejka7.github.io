@@ -1,22 +1,22 @@
 ---
-import Avatar from "./Avatar.astro";
+import Avatar from "../Avatar.astro";
 import NavPages from "./NavPages.astro";
 import NavSocials from "./NavSocials.astro";
-
-
 ---
-<nav>
-  <div class="p-5 flex items-center flex-col flex-none md:flex-row justify-between">
+
+<nav class="my-12">
+  <div
+    class="p-6 flex items-center flex-col flex-none md:flex-row justify-between"
+  >
     <Avatar />
 
     <div class="hidden sm:flex sm:items-center gap-12">
-
       <NavPages />
       <NavSocials />
     </div>
   </div>
 
-      <!-- <div class="theme-toggle">
+  <!-- <div class="theme-toggle">
         <ThemeToggle />
       </div> -->
 </nav>

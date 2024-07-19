@@ -1,11 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-
+import Title from "../components/typo/title.astro";
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import Nav from "../components/Nav.astro";
+import Nav from "../components/nav/Nav.astro";
 import Hero from "../components/Hero.astro";
+import SubTitle from "../components/typo/SubTitle.astro";
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection("work"))
@@ -19,11 +20,7 @@ const projects = (await getCollection("work"))
 
 <BaseLayout>
   <div class="grid gap-20">
-    <Hero
-      title="Hello there!"
-      tagline="Welcome on my personal website. I'm happy to see you there :)"
-      align="start"
-    />
-      
+    <Title title="about me" />
+    <SubTitle subtitle="Hello, Mikes there 👋" />
   </div>
 </BaseLayout>
